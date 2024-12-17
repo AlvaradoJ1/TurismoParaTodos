@@ -16,7 +16,9 @@
                 <li><a href="restaurantes.html" id="restaurantes">RESTAURANTES</a></li>
                 <li><a href="hoteles.html" id="hoteles">HOTELES</a></li>
                 <li><a href="transporte.html" id="transporte">TRANSPORTE</a></li>
-                <li><a href="acerca.html" id="acerca" class="active">ACERCA</a></li>
+                <li class="acerca-container">
+                    <button><a href="acerca.html" id="acerca" class="active">ACERCA</a></button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -137,26 +139,7 @@
         </section>
     </div>
 
-    <!-- JavaScript para el buscador -->
-    <script>
-        // Captura el input y todos los sitios
-        const buscador = document.getElementById('buscador');
-        const sitios = document.querySelectorAll('.sitio');
-
-        // Evento input para filtrar sitios
-        buscador.addEventListener('input', () => {
-            const filtro = buscador.value.toLowerCase();
-            sitios.forEach(sitio => {
-                const lugar = sitio.getAttribute('data-lugar').toLowerCase();
-                // Mostrar u ocultar el sitio
-                if (lugar.includes(filtro)) {
-                    sitio.style.display = 'block';
-                } else {
-                    sitio.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
