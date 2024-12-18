@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo para Todos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo"><a href="index.html" id="logo">Turismo para todos</a></h1>
+            <ul class="nav-links">
+                <li><a href="sitios.html" id="sitios">SITIOS</a></li>
+                <li><a href="restaurantes.html" id="restaurantes">RESTAURANTES</a></li>
+                <li><a href="hoteles.html" id="hoteles">HOTELES</a></li>
+                <li><a href="transporte.html" id="transporte">TRANSPORTE</a></li>
+                <li class="acerca-container">
+                    <button><a href="acerca.html" id="acerca" class="active">ACERCA</a></button>
+                </li>
+                <!-- Botón para cambiar idioma -->
+                <li>
+                    <span class="language-switch" onclick="changeLanguage()">
+                        English
+                    </span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de bienvenida -->
+    <section class="hero">
+        <h2 id="hero-title">Bienvenidos a Turismo para Todos</h2>
+        <p id="hero-text">Descubre los tesoros escondidos del sur de Huila. Aquí encontrarás las maravillas naturales, la riqueza cultural y las experiencias auténticas que solo esta región puede ofrecerte.</p>
+        <div class="hero-image">
+            <!-- Imágenes -->
+            <picture>
+                <source srcset="img/webp/index_1.webp" type="image/webp">
+                <img src="img/index_1.png" alt="el sur del huila">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Sección de Información -->
+    <section class="why-visit">
+        <h2 id="why-visit-title">¿Por Qué Visitar el Sur de Huila?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <picture>
+                    <source srcset="img/webp/index_2.webp" type="image/webp">
+                    <img src="img/index_2.png" alt="Paisajes Inigualables">
+                </picture> 
+                <h3 id="card1-title">Paisajes Inigualables:</h3>
+                <p id="card1-text">Desde las misteriosas estatuas de San Agustín hasta el desierto surrealista de la Tatacoa, el sur de Huila ofrece escenarios maravillosos que enamoran a todos los visitantes.</p>
+            </div>
+            <div class="card">
+                <picture>
+                    <source srcset="img/webp/index_3.webp" type="image/webp">
+                    <img src="img/index_3.png" alt="Patrimonio Arqueológico">
+                </picture> 
+                <h3 id="card2-title">Riqueza Cultural y Patrimonio Arqueológico:</h3>
+                <p id="card2-text">Sumérgete en la historia de las civilizaciones antiguas con el Parque Arqueológico de San Agustín, un sitio reconocido como Patrimonio de la Humanidad por la UNESCO.</p>
+            </div>
+            <div class="card">
+                <picture>
+                    <source srcset="img/webp/index_4.webp" type="image/webp">
+                    <img src="img/index_4.png" alt="Gastronomía Auténtica">
+                </picture>
+                <h3 id="card3-title">Gastronomía Auténtica:</h3>
+                <p id="card3-text">Descubre los sabores únicos de la región, desde el asado huilense hasta bebidas tradicionales como el café y la cholupa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-content">
+            <p id="footer-text">Turismo para todos</p>
+            <div class="contact">
+                <p id="contact-line">Línea de atención</p>
+                <p id="contact-email">Correo: turismoparatodos123@gmail.com</p>
+                <p id="contact-phone">Teléfonos: +57 3216549870 - +57 3127896045</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para cambio de idioma -->
+    <script>
+        const translations = {
+            'es': {
+                'logo': 'Turismo para todos',
+                'sitios': 'SITIOS',
+                'restaurantes': 'RESTAURANTES',
+                'hoteles': 'HOTELES',
+                'transporte': 'TRANSPORTE',
+                'acerca': 'ACERCA',
+                'hero-title': 'Bienvenidos a Turismo para Todos',
+                'hero-text': 'Descubre los tesoros escondidos del sur de Huila. Aquí encontrarás las maravillas naturales, la riqueza cultural y las experiencias auténticas que solo esta región puede ofrecerte.',
+                'why-visit-title': '¿Por Qué Visitar el Sur de Huila?',
+                'card1-title': 'Paisajes Inigualables:',
+                'card1-text': 'Desde las misteriosas estatuas de San Agustín hasta el desierto surrealista de la Tatacoa, el sur de Huila ofrece escenarios maravillosos que enamoran a todos los visitantes.',
+                'card2-title': 'Riqueza Cultural y Patrimonio Arqueológico:',
+                'card2-text': 'Sumérgete en la historia de las civilizaciones antiguas con el Parque Arqueológico de San Agustín, un sitio reconocido como Patrimonio de la Humanidad por la UNESCO.',
+                'card3-title': 'Gastronomía Auténtica:',
+                'card3-text': 'Descubre los sabores únicos de la región, desde el asado huilense hasta bebidas tradicionales como el café y la cholupa.',
+                'footer-text': 'Turismo para todos',
+                'contact-line': 'Línea de atención',
+                'contact-email': 'Correo: turismoparatodos123@gmail.com',
+                'contact-phone': 'Teléfonos: +57 3216549870 - +57 3127896045'
+            },
+            'en': {
+                'logo': 'Tourism for All',
+                'sitios': 'SITES',
+                'restaurantes': 'RESTAURANTS',
+                'hoteles': 'HOTELS',
+                'transporte': 'TRANSPORT',
+                'acerca': 'ABOUT',
+                'hero-title': 'Welcome to Tourism for All',
+                'hero-text': 'Discover the hidden treasures of southern Huila. Here you will find natural wonders, cultural richness, and authentic experiences that only this region can offer you.',
+                'why-visit-title': 'Why Visit Southern Huila?',
+                'card1-title': 'Unparalleled Landscapes:',
+                'card1-text': 'From the mysterious statues of San Agustín to the surreal Tatacoa Desert, southern Huila offers wonderful scenery that enchants all visitors.',
+                'card2-title': 'Cultural Richness and Archaeological Heritage:',
+                'card2-text': 'Immerse yourself in the history of ancient civilizations with the San Agustín Archaeological Park, a UNESCO World Heritage site.',
+                'card3-title': 'Authentic Gastronomy:',
+                'card3-text': 'Discover the unique flavors of the region, from Huilense roast to traditional drinks like coffee and cholupa.',
+                'footer-text': 'Tourism for All',
+                'contact-line': 'Customer Support',
+                'contact-email': 'Email: turismoparatodos123@gmail.com',
+                'contact-phone': 'Phones: +57 3216549870 - +57 3127896045'
+            }
+        };
+
+        let currentLanguage = 'es';
+
+        function changeLanguage() {
+            currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+            const elements = document.querySelectorAll('[id]');
+            elements.forEach(el => {
+                if (translations[currentLanguage][el.id]) {
+                    el.innerText = translations[currentLanguage][el.id];
+                }
+            });
+
+            document.querySelector('.language-switch').innerText = currentLanguage === 'es' ? 'English' : 'Español';
+            document.documentElement.lang = currentLanguage;
+        }
+    </script>
+</body>
+</html>
