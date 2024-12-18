@@ -2,8 +2,7 @@
 require 'cabecera.php'; 
 // Definir las traducciones en un arreglo asociativo
 $translations = [
-    'es' => [
-        
+    'es' => [        
         'hero-title' => 'Bienvenidos a Turismo para Todos',
         'hero-text' => 'Descubre los tesoros escondidos del sur de Huila. Aquí encontrarás las maravillas naturales, la riqueza cultural y las experiencias auténticas que solo esta región puede ofrecerte.',
         'why-visit-title' => '¿Por Qué Visitar el Sur de Huila?',
