@@ -9,7 +9,7 @@ class Transporte extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'slogan', 'descripcion', 'departamento', 'ciudad', 'direccion', 'img'];
+    protected $fillable = ['nombre', 'slogan','servicio', 'icono', 'descripcion', 'departamento', 'ciudad', 'direccion', 'img', 'whatsapp'];
   
 
     public function comentarios_transportes() {

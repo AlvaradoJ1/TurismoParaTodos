@@ -9,7 +9,7 @@ class Restaurante extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'slogan', 'servicio', 'descripcion', 'departamento', 'ciudad', 'direccion', 'img', 'whatspp', 'facebook', 'instagram,', 'twitter', 'tiktok'];
+    protected $fillable = ['nombre', 'slogan', 'servicio', 'descripcion', 'departamento', 'ciudad', 'direccion', 'img', 'whatsapp', 'facebook', 'instagram', 'twitter', 'tiktok'];
   
 
     public function comentarios_restaurantes() {

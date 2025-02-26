@@ -11,7 +11,7 @@ class Hotel extends Model
 
     protected $table = 'hoteles';
 
-    protected $fillable = ['nombre', 'slogan', 'servicio', 'descripcion', 'departamento', 'ciudad', 'direccion', 'img', 'whatspp', 'facebook', 'instagram,', 'twitter', 'tiktok'];
+    protected $fillable = ['nombre', 'slogan', 'servicio', 'descripcion', 'departamento', 'ciudad', 'direccion', 'img', 'whatsapp', 'facebook', 'instagram', 'twitter', 'tiktok'];
   
 
     public function comentarios_hoteles() {

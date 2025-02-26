@@ -58,48 +58,160 @@ class HotelController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
-}
+  
+     public function adminIndex(Request $request)
+     {
+         $hoteles = DB::table('hoteles')->get();
+ 
+     return view('/page/admin/adminHoteles', compact('hoteles'));
+ 
+     }
+         
+     public function store(Request $request)
+     {
+         // Validar los datos del formulario
+         $request->validate([
+             'nombre' => 'required|string|max:255',
+             'slogan_es' => 'nullable|string',
+             'slogan_en' => 'nullable|string',
+             'servicio_es' => 'nullable|string',
+             'servicio_en' => 'nullable|string',
+             'descripcion_es' => 'nullable|string',
+             'descripcion_en' => 'nullable|string',
+             'departamento' => 'required|string|max:255',
+             'ciudad' => 'required|string|max:255',
+             'direccion' => 'nullable|string|max:255',
+             'whatsapp' => 'nullable|string|max:255',
+             'facebook' => 'nullable|string|max:255',
+             'instagram' => 'nullable|string|max:255',
+             'twitter' => 'nullable|string|max:255',
+             'tiktok' => 'nullable|string|max:255',
+             'img_0' => 'nullable|string',
+             'img_1' => 'nullable|string',
+             'img_2' => 'nullable|string',
+         ]);
+ 
+     
+         $data = [
+             'nombre' => $request->nombre,
+             'slogan' => json_encode([
+                 'es' => $request->slogan_es,
+                 'en' => $request->slogan_en
+             ], JSON_UNESCAPED_UNICODE),
+             'servicio' => json_encode([
+                 'es' => $request->servicio_es,
+                 'en' => $request->servicio_en
+             ], JSON_UNESCAPED_UNICODE),
+             'descripcion' => json_encode([
+                 'es' => $request->descripcion_es,
+                 'en' => $request->descripcion_en
+             ], JSON_UNESCAPED_UNICODE),
+             'departamento' => $request->departamento,
+             'ciudad' => $request->ciudad,
+             'direccion' => $request->direccion,
+             'img' => json_encode([
+                 '0' => $request->img_0,
+                 '1' => $request->img_1,
+                 '2' => $request->img_2,
+             ], JSON_UNESCAPED_UNICODE),
+             'whatsapp' => $request->whatsapp,
+             'facebook' => $request->facebook,
+             'instagram' => $request->instagram,
+             'twitter' => $request->twitter,
+             'tiktok' => $request->tiktok
+         ];
+         
+ 
+         
+         Hotel::create($data);
+         
+         return redirect()->route('hoteles.index')->with('success', 'hotel creado correctamente.');
+     }        
+     
+ 
+     public function update(Request $request, $id)
+     {
+ 
+         $hotel = Hotel::findOrFail(($id)); // Usa findOrFail para asegurar que se obtiene el registro // Validar los datos del formulario
+         $validated = $request->validate([
+             'nombre' => 'required|string|max:255',
+             'slogan_es' => 'nullable|string',
+             'slogan_en' => 'nullable|string',
+             'servicio_es' => 'nullable|string',
+             'servicio_en' => 'nullable|string',
+             'descripcion_es' => 'nullable|string',
+             'descripcion_en' => 'nullable|string',
+             'departamento' => 'required|string|max:255',
+             'ciudad' => 'required|string|max:255',
+             'direccion' => 'nullable|string|max:255',
+             'img_0' => 'nullable|string',
+             'img_1' => 'nullable|string',
+             'img_2' => 'nullable|string',
+             'whatsapp' => 'nullable|string|max:20',
+             'facebook' => 'nullable|string|max:255',
+             'instagram' => 'nullable|string|max:255',
+             'twitter' => 'nullable|string|max:255',
+             'tiktok' => 'nullable|string|max:255',
+ 
+ 
+         ]);
+         $hotel->nombre = $validated["nombre"];
+         $hotel->slogan = json_encode([
+             'es' => $validated['slogan_es'],
+             'en' => $validated['slogan_en']
+         ]);
+         $hotel->servicio = json_encode([
+             'es' => $validated['servicio_es'],
+             'en' => $validated['servicio_en']
+         ]);
+         $hotel->descripcion = json_encode([
+             'es' => $validated['descripcion_es'],
+             'en' => $validated['descripcion_en']
+         ]);
+         $hotel->departamento = $validated["departamento"];
+         $hotel->ciudad = $validated["ciudad"];
+         $hotel->direccion = $validated["direccion"];
+         $hotel->img = json_encode([
+             '0' => $validated['img_0'],
+             '1' => $validated['img_1'],
+             '2' => $validated['img_2']
+         ]);
+         $hotel->whatsapp = $validated["whatsapp"];
+         $hotel->facebook = $validated["facebook"];
+         $hotel->instagram = $validated["instagram"];
+         $hotel->twitter = $validated["twitter"];
+         $hotel->tiktok = $validated["tiktok"];
+          // Guardar solo al final
+         $hotel->save();
+         if ($hotel->save()) {
+             return redirect()->route('hoteles.index')->with('success', 'Sitio actualizado correctamente');
+         }
+         return back()->withErrors([
+             'email' => 'The provided credentials do not match our records.',
+         ])->onlyInput('nombre');
+         
+     }
+ 
+     public function updateId($id)
+     {
+ 
+         $hotel =Hotel::findOrFail($id);
+ 
+         if (!$hotel) {
+             return redirect()->route('index')->with('error', 'hotele no encontrado');
+         }
+     
+         return view('/page/admin/adminHoteles', compact('hotel')) ;
+ 
+     }
+ 
+     public function destroy( $id)
+     {
+ 
+         $hotel = Hotel::findOrFail($id);
+ 
+         $hotel->delete();
+         return redirect()->route('hoteles.index')->with('success', 'hotel eliminado correctamente');
+     }
+ 
+ }

@@ -3,23 +3,23 @@
 @section('contenido')
     <div class="containerAdmin">
         <div class="cardAdmin dark-mode-target">
-            <a class="singup">Gestión de Sitios</a>
+            <a class="singup">Gestión de Transportes</a>
 
             {{-- Mostrar Mensajes --}}
             @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
-            {{-- Formulario para Agregar o Editar un Sitio --}}
+            {{-- Formulario para Agregar o Editar un Transporte --}}
             @php
-                $isEditing = isset($sitio) && $sitio->id;
-                $route = $isEditing ? route('sites.update', $sitio->id) : route('sites.store');
+                $isEditing = isset($transporte) && $transporte->id;
+                $route = $isEditing ? route('transportes.update', $transporte->id) : route('transportes.store');
                 $method = $isEditing ? 'PUT' : 'POST';
 
-                $slogan = json_decode($sitio->slogan ?? '{}', true);
-                $descripcion = json_decode($sitio->descripcion ?? '{}', true);
-                $servicio = json_decode($sitio->servicio ?? '{}', true);
-                $img = json_decode($sitio->img ?? '{}', true);
+                $slogan = json_decode($transporte->slogan ?? '{}', true);
+                $descripcion = json_decode($transporte->descripcion ?? '{}', true);
+                $servicio = json_decode($transporte->servicio ?? '{}', true);
+                $img = json_decode($transporte->img ?? '{}', true);
             @endphp
 
             <form action="{{ $route }}" method="POST" enctype="multipart/form-data">
@@ -31,31 +31,28 @@
                 <div class="formulario">
                     @foreach ([
             'nombre' => 'Nombre',
+            'icono' => 'Icono',
             'departamento' => 'Departamento',
             'ciudad' => 'Ciudad',
         ] as $name => $label)
                         <div class="inputBox">
                             <input type="text" class="lugarEvento" name="{{ $name }}" required
-                                value="{{ old($name, $sitio->$name ?? '') }}">
+                                value="{{ old($name, $transporte->$name ?? '') }}">
                             <span>{{ $label }}:</span>
                         </div>
                     @endforeach
                     @foreach ([
             'direccion' => 'Dirección',
             'whatsapp' => 'WhatsApp',
-            'facebook' => 'Facebook',
-            'instagram' => 'Instagram',
-            'twitter' => 'Twitter',
-            'tiktok' => 'TikTok',
         ] as $name1 => $label1)
                         <div class="inputBox">
                             <input type="text" class="lugarEvento" name="{{ $name1 }}"
-                                value="{{ old($name1, $sitio->$name1 ?? '') }}">
+                                value="{{ old($name1, $transporte->$name1 ?? '') }}">
                             <span>{{ $label1 }}:</span>
                         </div>
                     @endforeach
                     {{-- Campo para imágenes --}}
-                    @for ($i = 0; $i < 3; $i++)
+                    @for ($i = 0; $i < 2; $i++)
                         <div class="inputBox">
                             <input type="text" class="lugarEvento" name="img_{{ $i }}"
                                 value="{{ old("img_$i", $img[$i] ?? '') }}">
@@ -80,7 +77,7 @@
         </div>
     </div>
 
-    @if (isset($sitio) && $sitio->id)
+    @if (isset($transporte) && $transporte->id)
     @else
         <!-- Buscador -->
         <div class="input-container-buscador dark-mode-target">
@@ -99,19 +96,19 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($sitios as $sitio)
+                @foreach ($transportes as $transporte)
                 <tr class="Filtro" 
-                data-nombre="{{ $sitio->nombre }}" 
-                data-ciudad="{{ $sitio->ciudad ?? '' }}" 
-                data-departamento="{{ $sitio->departamento ?? '' }}">
-                        <td>{{ $sitio->id }}</td>
-                        <td>{{ $sitio->nombre }}</td>
-                        <td>{{ $sitio->departamento }}</td>
-                        <td>{{ $sitio->ciudad }}</td>
-                        <td>{{ $sitio->direccion }}</td>
+                data-nombre="{{ $transporte->nombre }}" 
+                data-ciudad="{{ $transporte->ciudad ?? '' }}" 
+                data-departamento="{{ $transporte->departamento ?? '' }}">
+                        <td>{{ $transporte->id }}</td>
+                        <td>{{ $transporte->nombre }}</td>
+                        <td>{{ $transporte->departamento }}</td>
+                        <td>{{ $transporte->ciudad }}</td>
+                        <td>{{ $transporte->direccion }}</td>
                         <td class="acciones">
                             <button class="editBtn" type="button"
-                                onclick="window.location='{{ route('sites.updateId', $sitio->id) }}'">
+                                onclick="window.location='{{ route('transportes.updateId', $transporte->id) }}'">
                                 <svg height="1em" viewBox="0 0 512 512">
                                     <path
                                         d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z">
@@ -119,8 +116,8 @@
                                 </svg>
                             </button>
 
-                            <form action="{{ route('sites.destroy', $sitio->id) }}" method="POST" class="d-inline"
-                                onsubmit="return confirm('¿Estás seguro de que deseas eliminar este sitio?');">
+                            <form action="{{ route('transportes.destroy', $transporte->id) }}" method="POST" class="d-inline"
+                                onsubmit="return confirm('¿Estás seguro de que deseas eliminar este transporte?');">
                                 @csrf
                                 @method('DELETE')
                                 <!-- From Uiverse.io by vinodjangid07 -->

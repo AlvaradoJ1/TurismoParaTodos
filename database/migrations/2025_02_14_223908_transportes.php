@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id()->unique();
             $table->string('nombre');
             $table->json('slogan')->nullable(); // Descripción en formato JSON
-            $table->string('icono');
+            $table->string('icono')->nullable();
             $table->json('servicio')->nullable(); // Descripción en formato JSON
             $table->json('descripcion')->nullable(); // Descripción en formato JSON
             $table->string('departamento');
             $table->string('ciudad');
-            $table->string('direccion');
+            $table->string('direccion')->nullable();
             $table->json('img')->nullable(); // Descripción en formato JSON
             $table->string('whatsapp')->nullable();
 

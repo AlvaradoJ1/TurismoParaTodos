@@ -19,7 +19,7 @@ return new class extends Migration
             $table->json('descripcion')->nullable(); // Descripción en formato JSON
             $table->string('departamento');
             $table->string('ciudad');
-            $table->string('direccion');
+            $table->string('direccion')->nullable();
             $table->json('img')->nullable(); // Descripción en formato JSON
             $table->string('whatsapp')->nullable();
             $table->string('facebook')->nullable();

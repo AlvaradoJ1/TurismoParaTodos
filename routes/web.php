@@ -82,11 +82,11 @@ Route::middleware(['role:admin'])->group(function () {
     Route::delete('/sitios/admin/{id}', [SitiosController::class, 'destroy'])->name('sites.destroy');
 
     //admin de restaurantes
-    Route::get('/restaurantes/admin', [RestauranteController::class, 'adminIndex'])->name('restaurante.index');
-    Route::post('/restaurantes/admin', [RestauranteController::class, 'store'])->name('restaurante.store');
-    Route::get('/restaurantes/admin/{id}', [RestauranteController::class, 'updateId'])->name('restaurante.updateId');
-    Route::put('/restaurantes/admin/{id}', [RestauranteController::class, 'update'])->name('restaurante.update');
-    Route::delete('/restaurantes/admin/{id}', [RestauranteController::class, 'destroy'])->name('restaurante.destroy');
+    Route::get('/restaurantes/admin', [RestauranteController::class, 'adminIndex'])->name('restaurantes.index');
+    Route::post('/restaurantes/admin', [RestauranteController::class, 'store'])->name('restaurantes.store');
+    Route::get('/restaurantes/admin/{id}', [RestauranteController::class, 'updateId'])->name('restaurantes.updateId');
+    Route::put('/restaurantes/admin/{id}', [RestauranteController::class, 'update'])->name('restaurantes.update');
+    Route::delete('/restaurantes/admin/{id}', [RestauranteController::class, 'destroy'])->name('restaurantes.destroy');
 
     //admin de hoteles
     Route::get('/hoteles/admin', [HotelController::class, 'adminIndex'])->name('hoteles.index');
@@ -96,11 +96,11 @@ Route::middleware(['role:admin'])->group(function () {
     Route::delete('/hoteles/admin/{id}', [HotelController::class, 'destroy'])->name('hoteles.destroy');
 
     //admin de transportes
-    Route::get('/transportes/admin', [TrasnporteController::class, 'adminIndex'])->name('transporte.index');
-    Route::post('/transportes/admin', [TrasnporteController::class, 'store'])->name('transporte.store');
-    Route::get('/transportes/admin/{id}', [TrasnporteController::class, 'updateId'])->name('transporte.updateId');
-    Route::put('/transportes/admin/{id}', [TrasnporteController::class, 'update'])->name('transporte.update');
-    Route::delete('/transportes/admin/{id}', [TrasnporteController::class, 'destroy'])->name('transporte.destroy');
+    Route::get('/transportes/admin', [TrasnporteController::class, 'adminIndex'])->name('transportes.index');
+    Route::post('/transportes/admin', [TrasnporteController::class, 'store'])->name('transportes.store');
+    Route::get('/transportes/admin/{id}', [TrasnporteController::class, 'updateId'])->name('transportes.updateId');
+    Route::put('/transportes/admin/{id}', [TrasnporteController::class, 'update'])->name('transportes.update');
+    Route::delete('/transportes/admin/{id}', [TrasnporteController::class, 'destroy'])->name('transportes.destroy');
 });
 
 
