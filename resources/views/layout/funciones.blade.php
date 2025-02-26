@@ -22,6 +22,7 @@
 </head>
 <body class="{{ session('theme', 'light') === 'dark' ? 'dark-mode' : '' }}">
     <x-cabecera></x-cabecera>
+    <x-admin></x-admin>
 @yield("contenido")
 </div>
 <x-footer></x-footer>

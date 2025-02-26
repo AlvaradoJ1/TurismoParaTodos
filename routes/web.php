@@ -74,15 +74,34 @@ use App\Http\Controllers\ThemeController;
 Route::post('/set-theme', [ThemeController::class, 'setTheme'])->name('set-theme');
 
 Route::middleware(['role:admin'])->group(function () {
+    //admin de sitios
     Route::get('/sitios/admin', [SitiosController::class, 'adminIndex'])->name('sites.index');
     Route::post('/sitios/admin', [SitiosController::class, 'store'])->name('sites.store');
     Route::get('/sitios/admin/{id}', [SitiosController::class, 'updateId'])->name('sites.updateId');
-
     Route::put('/sitios/admin/{id}', [SitiosController::class, 'update'])->name('sites.update');
     Route::delete('/sitios/admin/{id}', [SitiosController::class, 'destroy'])->name('sites.destroy');
-});
 
-Route::get('/sitios/admin/filtrar', [SitiosController::class, 'filtrar'])->name('sitios.filtrar');
+    //admin de restaurantes
+    Route::get('/restaurantes/admin', [RestauranteController::class, 'adminIndex'])->name('restaurante.index');
+    Route::post('/restaurantes/admin', [RestauranteController::class, 'store'])->name('restaurante.store');
+    Route::get('/restaurantes/admin/{id}', [RestauranteController::class, 'updateId'])->name('restaurante.updateId');
+    Route::put('/restaurantes/admin/{id}', [RestauranteController::class, 'update'])->name('restaurante.update');
+    Route::delete('/restaurantes/admin/{id}', [RestauranteController::class, 'destroy'])->name('restaurante.destroy');
+
+    //admin de hoteles
+    Route::get('/hoteles/admin', [HotelController::class, 'adminIndex'])->name('hoteles.index');
+    Route::post('/hoteles/admin', [HotelController::class, 'store'])->name('hoteles.store');
+    Route::get('/hoteles/admin/{id}', [HotelController::class, 'updateId'])->name('hoteles.updateId');
+    Route::put('/hoteles/admin/{id}', [HotelController::class, 'update'])->name('hoteles.update');
+    Route::delete('/hoteles/admin/{id}', [HotelController::class, 'destroy'])->name('hoteles.destroy');
+
+    //admin de transportes
+    Route::get('/transportes/admin', [TrasnporteController::class, 'adminIndex'])->name('transporte.index');
+    Route::post('/transportes/admin', [TrasnporteController::class, 'store'])->name('transporte.store');
+    Route::get('/transportes/admin/{id}', [TrasnporteController::class, 'updateId'])->name('transporte.updateId');
+    Route::put('/transportes/admin/{id}', [TrasnporteController::class, 'update'])->name('transporte.update');
+    Route::delete('/transportes/admin/{id}', [TrasnporteController::class, 'destroy'])->name('transporte.destroy');
+});
 
 
 
