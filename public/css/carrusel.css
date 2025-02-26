@@ -1,0 +1,250 @@
+/* Contenedor principal del carrusel */
+.carous {
+margin-left: 5px;
+margin-right: 5px;
+border-radius: 4px;
+padding-left: 5px;
+overflow: hidden; /* Oculta el desbordamiento del contenedor */
+padding: 20px 0;
+
+
+
+}
+/* Contenedor principal del carrusel */
+.carousel {
+    width: 48rem; /* Ancho del carrusel */
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de imágenes */
+.image-container {
+    display: grid;
+    grid-auto-flow: column; /* Coloca los elementos en una columna horizontal */
+    justify-items: stretch; /* Estira las imágenes para que ocupen todo el espacio */
+    animation: slide 10s linear infinite; /* Aplica la animación */
+
+}
+
+/* Estilos para las imágenes */
+.image-container img {
+    border-radius: 5px;
+    object-fit: cover;
+    border: 1px solid #a5b1c2;
+}
+
+
+
+
+.image-container:hover {
+    animation-play-state: paused;
+}
+
+
+
+/* Estilos para pantallas mayores a 1440px */
+@media (min-width: 1441px) {
+    .image-container{
+        grid-auto-columns: 320px; /* Ancho de cada columna (imagen) */
+    }
+    .carous{
+        height: 350px;
+    }
+    .carousel {
+        width: 100%;
+        height: 350px;
+
+    }
+    .image-container img {
+        width: 310px;
+        height: 310px;
+    }
+    /* Definición de la animación */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-3 * 320px)); /* Mueve el contenedor */
+    }
+}
+    
+}
+
+/* Estilos para pantallas de hasta 1440px */
+@media (max-width: 1440px) {
+    .image-container{
+        grid-auto-columns: 320px; /* Ancho de cada columna (imagen) */
+    }
+    .carous{
+        height: 340px;
+    }
+    .carousel {
+        width: 100%;
+        height: 340px;
+
+    }
+    .image-container img {
+        width: 300px;
+        height: 300px;
+ 
+    }
+    /* Definición de la animación */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-3 * 320px)); /* Mueve el contenedor */
+    }
+}
+}
+
+/* Estilos para pantallas de hasta 1024px */
+@media (max-width: 1024px) {
+    .image-container{
+        grid-auto-columns: 270px; /* Ancho de cada columna (imagen) */
+    }
+    .carous{
+        height: 290px;
+    }
+    .carousel {
+        width: 100%;
+        height: 290px;
+    }
+    .image-container img {
+        width: 250px;
+        height: 250px;
+ 
+    }
+    /* Definición de la animación */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-3 * 270px)); /* Mueve el contenedor */
+    }
+}
+}
+
+/* Estilos para pantallas de hasta 768px */
+@media (max-width: 768px) {
+    .image-container{
+        grid-auto-columns: 220px; /* Ancho de cada columna (imagen) */
+    }
+    .carous{
+        height: 240px;
+    }
+    .carousel {
+        width: 100%;
+        height: 240px;
+    }
+    .image-container img {
+        width: 200px;
+        height: 200px;
+ 
+    }
+    /* Definición de la animación */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-3 * 220px)); /* Mueve el contenedor */
+    }
+}
+}
+
+/* Estilos para pantallas de hasta 500px */
+@media (max-width: 500px) {
+    .image-container{
+        grid-auto-columns: 140px; /* Ancho de cada columna (imagen) */
+    }
+    .carous{
+        height: 160px;
+    }
+    .carousel {
+        width: 100%;
+        height: 160px;
+    }
+    .image-container img {
+        width: 120px;
+        height: 120px;
+ 
+    }
+    /* Definición de la animación */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-3 * 140px)); /* Mueve el contenedor */
+    }
+}
+}
+
+/* Estilos para pantallas de hasta 400px */
+@media (max-width: 280px) {
+    .image-container{
+        grid-auto-columns: 110px; /* Ancho de cada columna (imagen) */
+    }
+    .carous{
+        height: 120px;
+    }
+    .carousel {
+        width: 100%;
+        height: 120px;
+        padding: 10px 0;
+
+    }
+    .image-container img {
+        width: 100px;
+        height: 100px;
+ 
+    }
+    /* Definición de la animación */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-3 * 110px)); /* Mueve el contenedor */
+    }
+}
+}
+
+/* Estilos para pantallas de hasta 200px */
+@media (max-width: 200px) {
+    .image-container{
+        grid-auto-columns: 60px; /* Ancho de cada columna (imagen) */
+    }
+    .carous{
+        height: 70px;
+    }
+    .carousel {
+        width: 100%;
+        height: 70px;
+
+    }
+    .image-container img {
+        width: 50px;
+        height: 50px;
+    }
+    
+        /* Definición de la animación */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-3 * 60px)); /* Mueve el contenedor */
+    }
+}
+}
+
+
+

@@ -1,0 +1,129 @@
+/* p */
+@media (min-width: 1441px) {
+    p { font-size: 18px; }
+}
+@media (max-width: 1440px) {
+    p { font-size: 16px; }
+}
+@media (max-width: 1024px) {
+    p { font-size: 14px; }
+}
+@media (max-width: 768px) {
+    p { font-size: 12px; }
+}
+@media (max-width: 480px) {
+    p { font-size: 10px; }
+}
+
+/* h1 */
+@media (min-width: 1441px) {
+    h1 { font-size: 32px; }
+}
+@media (max-width: 1440px) {
+    h1 { font-size: 28px; }
+}
+@media (max-width: 1024px) {
+    h1 { font-size: 24px; }
+}
+@media (max-width: 768px) {
+    h1 { font-size: 20px; }
+}
+@media (max-width: 480px) {
+    h1 { font-size: 16px; }
+}
+
+/* h2 */
+@media (min-width: 1441px) {
+    h2 { font-size: 38px; }
+}
+@media (max-width: 1440px) {
+    h2 { font-size: 24px; }
+}
+@media (max-width: 1024px) {
+    h2 { font-size: 20px; }
+}
+@media (max-width: 768px) {
+    h2 { font-size: 16px; }
+}
+@media (max-width: 480px) {
+    h2 { font-size: 14px; }
+}
+
+/* h3 */
+@media (min-width: 1441px) {
+    h3 { font-size: 24px; }
+}
+@media (max-width: 1440px) {
+    h3 { font-size: 20px; }
+}
+@media (max-width: 1024px) {
+    h3 { font-size: 16px; }
+}
+@media (max-width: 768px) {
+    h3 { font-size: 14px; }
+}
+@media (max-width: 480px) {
+    h3 { font-size: 12px; }
+}
+
+/* button */
+@media (min-width: 1441px) {
+    .ver-detalles { font-size: 18px; padding: 12px 16px; }
+}
+@media (max-width: 1440px) {
+    .ver-detalles { font-size: 16px; padding: 10px 14px; }
+}
+@media (max-width: 1024px) {
+    .ver-detalles { font-size: 14px; padding: 8px 12px; }
+}
+@media (max-width: 768px) {
+    .ver-detalles { font-size: 12px; padding: 6px 10px; }
+}
+@media (max-width: 480px) {
+    .ver-detalles { font-size: 10px; padding: 4px 8px; }
+}
+
+
+@media (max-width: 480px) {
+    h1 { font-size: 16px; }
+    h2 { font-size: 14px; }
+    h3 { font-size: 12px; }
+    p { font-size: 10px; }
+    button { font-size: 10px; padding: 4px 8px; }
+}
+
+/* Teléfonos Grandes */
+@media (max-width: 768px) {
+    h1 { font-size: 20px; }
+    h2 { font-size: 16px; }
+    h3 { font-size: 14px; }
+    p { font-size: 12px; }
+    button { font-size: 12px; padding: 6px 10px; }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 16px; }
+    p { font-size: 14px; }
+    button { font-size: 14px; padding: 8px 12px; }
+}
+
+/* Laptops y PC */
+@media (max-width: 1440px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+    p { font-size: 16px; }
+    button { font-size: 16px; padding: 10px 14px; }
+}
+
+/* Monitores Grandes */
+@media (min-width: 1441px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 38px; }
+    h3 { font-size: 24px; }
+    p { font-size: 18px; }
+    button { font-size: 18px; padding: 12px 16px; }
+}

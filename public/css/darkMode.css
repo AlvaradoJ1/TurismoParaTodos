@@ -1,0 +1,479 @@
+/* Modo oscuro */
+body.dark-mode {
+    color: #ffffff;
+    background-color: #121212;
+}
+
+header.dark-mode {
+    background: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.logo.dark-mode {
+    color: #ccc;
+}
+
+.nav-links.dark-mode a::after {
+    background-color: #fff;
+}
+
+.nav-links.dark-mode a {
+    color: #ccc;
+}
+
+.btn-login.dark-mode {
+    color: #000000;
+    background: #ffffff;
+    box-shadow: 4px 8px 19px -3px rgba(255, 255, 255, 0.27);
+}
+
+.btn-login.dark-mode::before {
+    background-color: #000000;
+    box-shadow: 4px 8px 19px -3px rgba(255, 255, 255, 0.27);
+}
+
+.btn-login.dark-mode:hover {
+    color: #ffffff;
+}
+
+.slider.dark-mode {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.slider.dark-mode:before {
+    box-shadow: inset 8px -4px 0px 0px rgb(0, 0, 0);
+    background: var(--background-dark);
+}
+
+.switch.dark-mode input:checked + .slider {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border: 2px solid #ffffff;
+    background-color: #000000;
+}
+
+.switch.dark-mode input:checked + .slider:before {
+    box-shadow: inset 15px -4px 0px 15px rgb(255, 255, 255);
+}
+
+.input-buscador.dark-mode {
+    color: #ffffff;
+    background-color: #1e1e1e;
+    border: 4px solid #ffffff;
+    box-shadow: 8px 8px 0 #ffffff;
+}
+
+.input-buscador.dark-mode::placeholder {
+    color: #bbb;
+}
+
+.input-buscador.dark-mode:hover {
+    box-shadow: 12px 12px 0 #ffffff;
+}
+
+.input-buscador.dark-mode:focus {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.input-buscador.dark-mode:focus::placeholder {
+    color: #000000;
+}
+
+.input-container-buscador.dark-mode {
+    color: #000000;
+}
+
+.inpu-buscadort.dark-mode:focus + .input-container-buscador::after {
+    color: #000000;
+}
+
+.input-buscador.dark-mode:not(:placeholder-shown) {
+    text-shadow: 0px 0px 0 #ffffff;
+}
+
+.card.dark-mode {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.card.dark-mode h3 {
+    color: #ffffff;
+}
+
+.log.dark-mode a {
+    color: #ffffff;
+}
+
+.language-switch.dark-mode {
+    background: #ffffff;
+}
+
+.language-switch.dark-mode a {
+    color: #000000;
+}
+
+.language-switch.dark-mode::before {
+    background-image: linear-gradient(180deg, rgb(0, 0, 0), rgb(85, 85, 85));
+}
+
+.language-switch.dark-mode::after {
+    background: #ffffff;
+}
+
+.sitio.dark-mode {
+    background: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+.login-message.dark-mode a{
+    color: #ffffff;
+
+}
+
+footer.dark-mode {
+    background-color: #222222a8;
+    color: #ffffff;
+    border-top: 2px solid #bbb;
+}
+
+.imagen-izquierda.dark-mode img {
+    border: 2px solid #ffffff;
+}
+
+.info-derecha.dark-mode img {
+    border: 2px solid #ffffff;
+}
+
+.info-texto.dark-mode {
+    color: #ccc;
+}
+
+.acerca-de.dark-mode {
+    color: #ccc;
+}
+
+form.dark-mode input,
+form.dark-mode textarea {
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+button.dark-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button.dark-mode:hover {
+    background-color: #000000;
+}
+
+.btn-acercaa.dark-mode {
+    background: white;
+    color: black;
+}
+
+.btn-acercaa.dark-mode a {
+    color: black;
+}
+
+.btn-acercaa.dark-mode:after {
+    background: black;
+    color: white;
+}
+
+.btn-acercaa.dark-mode:hover a {
+    color: white;
+}
+
+.wrapper.dark-mode .tooltip {
+    background: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.1);
+}
+
+.wrapper.dark-mode .tooltip::before {
+    background: #1e1e1e;
+}
+
+.cardC.dark-mode {
+    background-color: #1e1e1e;
+    box-shadow: 0px 187px 75px rgba(255, 255, 255, 0.01), 0px 105px 63px rgba(255, 255, 255, 0.05), 0px 47px 47px rgba(255, 255, 255, 0.09), 0px 12px 26px rgba(255, 255, 255, 0.1), 0px 0px 0px rgba(255, 255, 255, 0.1);
+}
+
+.title.dark-mode {
+    border-bottom: 1px solid #444;
+    color: #ccc;
+}
+
+.title.dark-mode::after {
+    background-color: #ccc;
+}
+
+.comments.dark-mode {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.comment-react.dark-mode {
+    background-color: #1e1e1e;
+}
+
+.comment-react.dark-mode hr {
+    background-color: #444;
+}
+
+.comment-react.dark-mode span {
+    color: #bbb;
+}
+
+.comment-container.dark-mode .user .user-pic {
+    background-color: #333;
+}
+
+.comment-container.dark-mode .user .user-info span {
+    color: #ccc;
+}
+
+.comment-container.dark-mode .user .user-info p {
+    color: #999;
+}
+
+.comment-container.dark-mode .comment-content {
+    color: #bbb;
+}
+
+.text-box.dark-mode {
+    background-color: #333;
+}
+
+.text-box.dark-mode .box-container {
+    background-color: #1e1e1e;
+}
+
+.text-box.dark-mode textarea {
+    caret-color: #ffffff;
+}
+
+.text-box.dark-mode .formatting button:hover {
+    background-color: #444;
+}
+
+.formatting.dark-mode svg {
+    stroke: #ccc;
+}
+
+.btnEnviar.dark-mode {
+    background: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.btnEnviar.dark-mode:hover {
+    box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.3);
+}
+
+.formatting.dark-mode button.active {
+    background-color: #555;
+}
+
+.comment-box.dark-mode {
+    border: 1px solid #444;
+}
+
+.comment-box.dark-mode:empty:before {
+    color: #999;
+}
+
+.emoji-picker.dark-mode {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.emoji-picker.dark-mode span:hover {
+    background: #333;
+}
+.horario.dark-mode{
+    color: #fff;
+}
+.titulo.dark-mode{
+    color: #fff;
+}
+/* Modo oscuro */
+.carousel2.dark-mode {
+    background: #1e1e1e; /* Fondo oscuro */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra clara */
+}
+
+.image-container2.dark-mode img {
+    border: 1px solid #171111; /* Borde más oscuro */
+}
+
+.ver-detalles.dark-mode {
+    background-color: #1e1e1e; /* Fondo claro */
+    color: #ffffff; /* Texto oscuro */
+    box-shadow: 0.5em 0.5em 0.5em rgba(255, 255, 255, 0.3); /* Sombra clara */
+    border: 1px solid white;
+}
+
+.ver-detalles.dark-mode::before {
+    background: linear-gradient(135deg, rgb(52, 52, 52) 0%, rgb(75, 73, 73) 50%, rgb(136, 136, 136) 50%, rgb(233, 220, 220) 60%); /* Gradiente invertido */
+    box-shadow: 0.2em 0.2em 0.2em rgb(25, 25, 25); /* Sombra clara */
+}
+
+
+.carousel.dark-mode {
+    background-color: #1e1e1e; /* Fondo oscuro */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra clara */
+}
+
+.image-container .dark-mode img {
+    border: 1px solid #444; /* Borde más oscuro */
+}
+
+.wrapper.dark-mode .icon {
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.1); /* Sombra clara */
+    background-color: #151515;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.631);
+}
+
+.wrapper.dark-mode .facebook:hover,
+.wrapper.dark-mode .facebook:hover .tooltip,
+.wrapper.dark-mode .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.dark-mode .twitter:hover,
+.dark-mode .twitter:hover .tooltip,
+.dark-mode .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.dark-mode .instagram:hover,
+.dark-mode .instagram:hover .tooltip,
+.dark-mode .instagram:hover .tooltip::before {
+  background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+  color: #fff;
+}
+.dark-mode .tiktok:hover,
+.dark-mode .tiktok:hover .tooltip,
+.dark-mode .tiktok:hover .tooltip::before {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .whatsapp:hover,
+.dark-mode .whatsapp:hover .tooltip,
+.dark-mode .whatsapp:hover .tooltip::before {
+  background: #25D366;
+  color: #fff;
+}
+
+
+/* Login */
+.login-box.dark-mode {
+    background: rgba(0,0,0,.9);
+    box-shadow: 0 5px 25px rgb(255, 255, 255);
+  }
+  
+  
+  .login-box.dark-mode p:first-child {
+    color: #fff;
+  }
+  
+  input.dark-mode:-webkit-autofill {
+    -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #000000 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+  
+
+
+  .login-box .user-box.dark-mode input {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+
+  }
+  
+  .login-box .user-box.dark-mode label {
+    color: #fff;
+  }
+
+  .login-box .dark-mode input:focus ~ label,
+  .login-box .dark-mode input:not(:placeholder-shown) ~ label {
+    color: #ffffff;
+  }
+  
+  .login-box form .btn-acceder.dark-mode {
+
+    color: #fff;
+    background-color: #000000;
+
+  }
+  
+  .login-box .btn-acceder.dark-mode:hover {
+    background: #fff;
+    color: #272727;
+
+  }
+  
+
+  
+  .login-box .btn-acceder.dark-mode span:nth-child(1) {
+    background: linear-gradient(90deg, transparent, #fff);
+  }
+
+  
+  .login-box .btn-acceder.dark-mode span:nth-child(2) {
+    background: linear-gradient(180deg, transparent, #fff);
+
+  }
+  
+
+  
+  .login-box .btn-acceder.dark-mode span:nth-child(3) {
+    background: linear-gradient(270deg, transparent, #fff);
+  }
+  
+
+  .login-box .btn-acceder.dark-mode span:nth-child(4) {
+    background: linear-gradient(360deg, transparent, #fff);
+  }
+  
+  
+  .login-box.dark-mode p:last-child {
+    color: #aaa;
+  
+  }
+  
+  .login-box .a2.dark-mode {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .login-box .a2.dark-mode:hover {
+    background: transparent;
+    color: #aaa;
+    border-radius: 5px;
+  }
+  
+  
+  
+  
+  

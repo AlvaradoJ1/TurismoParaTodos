@@ -1,0 +1,164 @@
+/* From Uiverse.io by JkHuger */ 
+.singup {
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  
+  .cardAdmin {
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    min-width: 320px;
+    max-width: 1000px;
+    flex-direction: column;
+    gap: 35px;
+    width:100%;
+    border-radius: 15px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,
+          -16px -16px 32px #fefefe;
+    border-radius: 8px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .formulario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas automáticas */
+    gap: 20px;
+    max-width:100%;
+    width:100%;
+    margin: auto;
+    padding: 10px;
+}
+
+  .inputBox,
+  .inputBox1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+  }
+  
+  .inputBox input,
+  .inputBox1 input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: #000;
+    background: transparent;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transition: 0.1s;
+    border-bottom-left-radius: 8px;
+    box-sizing: border-box;
+  }
+  .inputBox textarea{
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    height: 70px;
+    outline: none;
+    border: none;
+    color: #000;
+    background: transparent;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transition: 0.1s;
+    border-bottom-left-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+
+  .inputBox span,
+  .inputBox1 span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  .inputBox input.has-content ~ span,
+  .inputBox input:focus ~ span,
+  .inputBox textarea.has-content ~ span,
+  .inputBox textarea:focus ~ span {
+    transform: translateX(113px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+  }
+  
+
+  
+  .inputBox1 input.has-content ~ span,
+  .inputBox1 input:focus ~ span {
+    transform: translateX(156px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: #000;
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
+  }
+  
+  .inputBox input.has-content,
+  .inputBox input:focus,
+  .inputBox textarea.has-content,
+  .inputBox textarea:focus,
+  .inputBox1 input.has-content,
+  .inputBox1 input:focus {
+    top: 0; /* Se mantiene arriba */
+    border: 2px solid #000;
+    border-radius: 8px;
+  }
+  
+  .enter {
+    height: 45px;
+    width: 120px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3em;
+    margin: auto;
+    font-size: 10px;
+    color: #000;
+  }
+  
+  .enter:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+
+  
+
+
+
+
+
+
+
+  
