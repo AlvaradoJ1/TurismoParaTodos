@@ -1,4 +1,4 @@
-@if(auth()->user()->hasRole('admin'))
+@if(auth()->check() && auth()->user()->hasRole('admin'))
 <ul class="nav-links dark-mode-target">
     <li>
         <button class="btnAdmin dark-mode-target"

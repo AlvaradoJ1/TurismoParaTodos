@@ -71,6 +71,8 @@ use App\Models\ComentarioHotel;
 use App\Models\ComentarioTransporte;
 use App\Http\Controllers\ThemeController;
 
+
+
 Route::post('/set-theme', [ThemeController::class, 'setTheme'])->name('set-theme');
 
 Route::middleware(['role:admin'])->group(function () {
