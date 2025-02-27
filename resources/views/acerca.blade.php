@@ -48,7 +48,10 @@
             </div>
             <button type="submit" class="enter">{{ __('traslate.envia')}}</button>
         </form>
-        
+            <!-- #region 
+            
+            
+        -->
     </div>
 </section>
 @endsection
