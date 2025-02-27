@@ -54,10 +54,9 @@
                 of great help to those who wish to explore and learn more about our region.',
             'contacto'=>'Contact us',
             'nombre'=>'First name',
-            'apellido'=>'Last name',
-            'email'=>'Email',
+            'numero'=>'Phone number',
             'comentario'=>'Tell us your requests, suggestions or comments',
-            'enviar'=>'Send',
+            'envia'=>'Send',
             //transporte
             'transport'=>'Transportation',                
             //Sitios

@@ -53,10 +53,9 @@ return [
         'acerca-2'=>'',
         'contacto'=>'Contáctanos',
         'nombre'=>'Nombres',
-        'apellido'=>'Apellidos',
-        'email'=>'Correo electrónico',
+        'numero'=>'Número de teléfono',
         'comentario'=>'Cuéntanos tus solicitudes, sugerencias o comentarios',
-        'enviar'=>'Enviar',
+        'envia'=>'Enviar',
         //Transporte
         'transport'=>'Transporte',
         //Sitios

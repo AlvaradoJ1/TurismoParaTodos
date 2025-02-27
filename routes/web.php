@@ -70,7 +70,10 @@ use App\Models\ComentarioRestaurante;
 use App\Models\ComentarioHotel;
 use App\Models\ComentarioTransporte;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\ContactoController;
 
+Route::post('/acerca/enviar', [ContactoController::class, 'enviar'])->name('contacto.enviar');
+Route::get('/acerca', [PruebasController::class, 'acerca'])->name('acerca');
 
 
 Route::post('/set-theme', [ThemeController::class, 'setTheme'])->name('set-theme');
