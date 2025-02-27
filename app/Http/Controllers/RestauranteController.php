@@ -16,14 +16,6 @@ class RestauranteController extends Controller
     {
         $restaurantes = DB::table('restaurantes')->get();
 
-        $restaurantes->transform(function ($restaurante) {
-            $restaurante->slogan = json_decode($restaurante->slogan, true);
-            $restaurante->descripcion = json_decode($restaurante->descripcion, true);
-            $restaurante->img = json_decode($restaurante->img, true);
-            return $restaurante;
-        });
-
-
         return view("restaurantes", compact('restaurantes'));
         
     }

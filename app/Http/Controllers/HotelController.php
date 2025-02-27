@@ -17,13 +17,6 @@ class HotelController extends Controller
     {
         $hoteles = DB::table('hoteles')->get();
 
-        $hoteles->transform(function($hotel){
-            $hotel->slogan = json_decode($hotel->slogan, true);
-            $hotel->descripcion = json_decode($hotel->descripcion, true);
-            $hotel->img = json_decode($hotel->img, true);
-            return $hotel;
-        });
-
 
         return view("hoteles", compact("hoteles"));
     }

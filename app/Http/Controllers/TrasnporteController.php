@@ -16,13 +16,6 @@ class TrasnporteController extends Controller
     {
         $transportes = DB::table('transportes')->get();
 
-        $transportes->transform(function ($transporte) {
-            $transporte->slogan = json_decode($transporte->slogan, true);
-            $transporte->descripcion = json_decode($transporte->descripcion, true);
-            $transporte->img = json_decode($transporte->img, true);
-            return $transporte;
-    });
-
     return view('transportes', compact('transportes'));
     }
 
