@@ -52,10 +52,22 @@
                         </div>
                     @endforeach
                     {{-- Campo para imágenes --}}
-                    @for ($i = 0; $i < 2; $i++)
+                    @php
+                        $imagenes = json_decode($transporte->img ?? '[]', true);
+                    @endphp
+
+                    @for ($i = 0; $i < 3; $i++)
                         <div class="inputBox">
-                            <input type="text" class="lugarEvento" name="img_{{ $i }}"
-                                value="{{ old("img_$i", $img[$i] ?? '') }}">
+                            {{-- Campo para subir nueva imagen --}}
+                            <input type="file" class="lugarEvento imgs" name="img_{{ $i }}" accept="image/*">
+
+                            {{-- Si ya existe una imagen, mostrarla --}}
+                            @if (!empty($imagenes[$i]))
+                                <div class="preview">
+                                    <img src="{{ asset('img/' . $imagenes[$i]) }}" alt="Imagen {{ $i + 1 }}"
+                                        width="150">
+                                </div>
+                            @endif
                             <span>Imagen {{ $i + 1 }}:</span>
                         </div>
                     @endfor
@@ -97,10 +109,9 @@
             </thead>
             <tbody>
                 @foreach ($transportes as $transporte)
-                <tr class="Filtro" 
-                data-nombre="{{ $transporte->nombre }}" 
-                data-ciudad="{{ $transporte->ciudad ?? '' }}" 
-                data-departamento="{{ $transporte->departamento ?? '' }}">
+                    <tr class="Filtro" data-nombre="{{ $transporte->nombre }}"
+                        data-ciudad="{{ $transporte->ciudad ?? '' }}"
+                        data-departamento="{{ $transporte->departamento ?? '' }}">
                         <td>{{ $transporte->id }}</td>
                         <td>{{ $transporte->nombre }}</td>
                         <td>{{ $transporte->departamento }}</td>
@@ -116,7 +127,8 @@
                                 </svg>
                             </button>
 
-                            <form action="{{ route('transportes.destroy', $transporte->id) }}" method="POST" class="d-inline"
+                            <form action="{{ route('transportes.destroy', $transporte->id) }}" method="POST"
+                                class="d-inline"
                                 onsubmit="return confirm('¿Estás seguro de que deseas eliminar este transporte?');">
                                 @csrf
                                 @method('DELETE')
@@ -148,6 +160,6 @@
                 @endforeach
             </tbody>
     @endif
-    
+
     </table>
 @endsection

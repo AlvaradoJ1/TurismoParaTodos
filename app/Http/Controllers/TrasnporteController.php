@@ -73,12 +73,22 @@ class TrasnporteController extends Controller
             'ciudad' => 'required|string|max:255',
             'direccion' => 'nullable|string|max:255',
             'whatsapp' => 'nullable|string|max:255',
-            'img_0' => 'nullable|string',
-            'img_1' => 'nullable|string',
-            'img_2' => 'nullable|string',
+            'img_0' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'img_1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-    
+            // Procesar imágenes y guardar en 'public/img/'
+            $imagenes = [];
+            for ($i = 0; $i < 3; $i++) {
+                if ($request->hasFile("img_$i")) {
+                    $imagen = $request->file("img_$i");
+                    $nombreImagen = time() . "_$i." . $imagen->extension();
+                    $imagen->move(public_path('img'), $nombreImagen); // Guardar en 'public/img/'
+                    $imagenes[$i] = $nombreImagen;
+                } else {
+                    $imagenes[$i] = null; // Si no hay imagen, se guarda null
+                }
+            }
         $data = [
             'icono' => $request->icono,
             'nombre' => $request->nombre,
@@ -97,11 +107,7 @@ class TrasnporteController extends Controller
             'departamento' => $request->departamento,
             'ciudad' => $request->ciudad,
             'direccion' => $request->direccion,
-            'img' => json_encode([
-                '0' => $request->img_0,
-                '1' => $request->img_1,
-                '2' => $request->img_2,
-            ], JSON_UNESCAPED_UNICODE),
+            'img' => json_encode($imagenes, JSON_UNESCAPED_UNICODE), // Se almacenan los nombres de las imágenes
             'whatsapp' => $request->whatsapp,
         ];
         
@@ -129,9 +135,8 @@ class TrasnporteController extends Controller
             'departamento' => 'required|string|max:255',
             'ciudad' => 'required|string|max:255',
             'direccion' => 'nullable|string|max:255',
-            'img_0' => 'nullable|string',
-            'img_1' => 'nullable|string',
-            'img_2' => 'nullable|string',
+            'img_0' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'img_1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'whatsapp' => 'nullable|string|max:20',
         ]);
         $transport->icono = $validated["icono"];
@@ -151,13 +156,37 @@ class TrasnporteController extends Controller
         $transport->departamento = $validated["departamento"];
         $transport->ciudad = $validated["ciudad"];
         $transport->direccion = $validated["direccion"];
-        $transport->img = json_encode([
-            '0' => $validated['img_0'],
-            '1' => $validated['img_1'],
-            '2' => $validated['img_2']
-        ]);
         $transport->whatsapp = $validated["whatsapp"];
-         // Guardar solo al final
+                 // Decodificar imágenes existentes
+    $imagenes_anteriores = json_decode($transport->img, true);
+
+    $imagenes_nuevas = [];
+
+    for ($i = 0; $i < 2; $i++) {
+        if ($request->hasFile("img_$i")) {
+            // Eliminar imagen anterior si existe
+            if (!empty($imagenes_anteriores[$i])) {
+                $ruta_anterior = public_path('img/' . $imagenes_anteriores[$i]);
+                if (file_exists($ruta_anterior)) {
+                    unlink($ruta_anterior);
+                }
+            }
+
+            // Guardar la nueva imagen
+            $imagen = $request->file("img_$i");
+            $nombreImagen = time() . "_$i." . $imagen->extension();
+            $imagen->move(public_path('img'), $nombreImagen);
+            $imagenes_nuevas[$i] = $nombreImagen;
+        } else {
+            // Mantener la imagen anterior si no se sube una nueva
+            $imagenes_nuevas[$i] = $imagenes_anteriores[$i] ?? null;
+        }
+    }
+    
+        // Guardar las imágenes actualizadas
+        $transport->img = json_encode($imagenes_nuevas, JSON_UNESCAPED_UNICODE);
+    
+        // Guardar cambios en la base de datos
         $transport->save();
         if ($transport->save()) {
             return redirect()->route('transportes.index')->with('success', 'Sitio actualizado correctamente');
@@ -185,7 +214,22 @@ class TrasnporteController extends Controller
     {
 
         $transport = Transporte::findOrFail($id);
-
+        // Decodificar el JSON de imágenes
+        $imagenes = json_decode($transport->img, true);
+    
+        // Eliminar las imágenes del servidor si existen
+        if (!empty($imagenes)) {
+            foreach ($imagenes as $imagen) {
+                if (!empty($imagen)) {
+                    $ruta_imagen = public_path('img/' . $imagen);
+                    if (file_exists($ruta_imagen)) {
+                        unlink($ruta_imagen);
+                    }
+                }
+            }
+        }
+    
+        // Eliminar el registro de la base de datos
         $transport->delete();
         return redirect()->route('transportes.index')->with('success', 'transporte eliminado correctamente');
     }

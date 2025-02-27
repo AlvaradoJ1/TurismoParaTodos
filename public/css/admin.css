@@ -41,9 +41,6 @@
 }
 
 
-
-
-
 .singup {
     color: #000;
     text-transform: uppercase;
@@ -121,7 +118,19 @@
     border-bottom-left-radius: 8px;
     box-sizing: border-box;
   }
-  
+  .inputBox input.imgs::file-selector-button {
+    margin-top: 30px; /* Ajusta el espacio */
+    padding: 5px 10px;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.inputBox input.imgs {
+    height: auto; /* Para evitar que el input sea demasiado alto */
+    padding: 5px;
+}
 
   .inputBox span,
   .inputBox1 span {

@@ -55,13 +55,24 @@
                         </div>
                     @endforeach
                     {{-- Campo para imágenes --}}
-                    @for ($i = 0; $i < 3; $i++)
-                        <div class="inputBox">
-                            <input type="text" class="lugarEvento" name="img_{{ $i }}"
-                                value="{{ old("img_$i", $img[$i] ?? '') }}">
-                            <span>Imagen {{ $i + 1 }}:</span>
-                        </div>
-                    @endfor
+                    @php
+                    $imagenes = json_decode($restaurant->img ?? '[]', true);
+                @endphp
+                
+                @for ($i = 0; $i < 3; $i++)
+                    <div class="inputBox">
+                        {{-- Campo para subir nueva imagen --}}
+                        <input type="file" class="lugarEvento imgs" name="img_{{ $i }}" accept="image/*">
+                        
+                        {{-- Si ya existe una imagen, mostrarla --}}
+                        @if (!empty($imagenes[$i]))
+                            <div class="preview">
+                                <img src="{{ asset('img/' . $imagenes[$i]) }}" alt="Imagen {{ $i + 1 }}" width="150">
+                            </div>
+                        @endif
+                        <span>Imagen {{ $i + 1 }}:</span>
+                    </div>
+                @endfor
 
                     {{-- Campos para textos en diferentes idiomas --}}
                     @foreach (['slogan', 'servicio', 'descripcion'] as $field)
